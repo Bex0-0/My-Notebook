@@ -1,0 +1,26 @@
+function whetherInclude(stringShort, stringLong){
+ 	let j = 0;
+	if(stringLong.length >= stringShort.length){
+		for(i = 0; i < stringLong.length; i ++){			
+			if(stringShort[j] === stringLong[i]){
+				j ++;
+				if(j == stringShort.length){
+					return true;
+				}
+			} else if(stringLong[i] === stringShort[0]){
+				i --;
+				j = 0;
+			} else {
+				j = 0;
+			}
+		}
+		return false;
+	} else {
+		return false;
+	}
+}
+
+let str1 = "type";
+let str2 = "istyptypely";
+
+console.log(whetherInclude(str1, str2));
